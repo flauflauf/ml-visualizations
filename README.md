@@ -8,4 +8,10 @@ Gabor functions have been shown to be good models for the behavior of simple cel
 
 [This notebook](./notebooks/gabor-functions.ipynb) lets you interactively change the functions parameters to quickly get an intuitive feel for them.
 
-![Gabor filter](./images/gabor-filter.png)
+![Gabor filter](./images/gabor-function.png)
+
+## Gabor convolution
+
+Convolutional Neural Networks convolve their learned kernels over images (and hidden layer activations). Try it out with the [Gabor convolution notebook](./notebooks/gabor-convolution.ipynb).
+
+![Gabor convolution on cat image](./images/gabor-convolution.png)
