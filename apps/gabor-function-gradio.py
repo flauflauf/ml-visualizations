@@ -46,17 +46,18 @@ def plot_gabor(x0=0, y0=0, theta=0, beta_x=1, beta_y=1, alpha=1, f=0.5, phi=0, d
 
 
 iface = gr.Interface(fn=plot_gabor,
-                     inputs=[gr.Slider(-10, 10, step=0.5, label="x0"),
-                             gr.Slider(-10, 10, step=0.5, label="y0"),
-                             gr.Slider(0, np.pi, step=np.pi / 16, label="theta"),
-                             gr.Slider(0.001, 10, step=0.001, label="beta_x"),
-                             gr.Slider(0.001, 10, step=0.001, label="beta_y"),
-                             gr.Slider(0.1, 10, step=0.1, label="alpha"),
-                             gr.Slider(0.01, 10, step=0.05, label="f"),
-                             gr.Slider(0, 2 * np.pi, step=np.pi / 16, label="phi"),
-                             gr.Checkbox(label="Draw sigma")],
+                     inputs=[gr.Slider(-10, 10, step=0.5, value=0, label="x0"),
+                             gr.Slider(-10, 10, step=0.5, value=0, label="y0"),
+                             gr.Slider(0, np.pi, step=np.pi / 16, value=2, label="theta"),
+                             gr.Slider(0.001, 1, step=0.001, value=0.1, label="beta_x"),
+                             gr.Slider(0.001, 1, step=0.001, value=0.03, label="beta_y"),
+                             gr.Slider(0.1, 10, step=0.1, value=3, label="alpha"),
+                             gr.Slider(0.01, 2, step=0.05, value=0.15, label="f"),
+                             gr.Slider(0, 2 * np.pi, step=np.pi / 16, value=0, label="phi"),
+                             gr.Checkbox(value=False, label="Draw sigma")],
                      outputs="plot",
                      title="Gabor Filter Visualization",
                      description="Adjust the parameters to see changes in the Gabor filter visualization.",
-                     live=True)
+                     live=True,
+                     allow_flagging='never')
 iface.launch()
